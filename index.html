@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardea Key — an open security key, in the making</title>
+  <meta name="description" content="Cardea Key: an open-source security key (FIDO2 passkeys, OpenPGP, PIV, OATH) built on the RP2350, with a secure element and a fingerprint sensor. Work in progress.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="mark" aria-hidden="true">&#x26BF;</p>
+      <h1>Cardea Key</h1>
+      <p class="tagline">An open security key, in the making.</p>
+    </header>
+
+    <blockquote>
+      <p>&ldquo;Her power is to open what is shut, to shut what is open.&rdquo;</p>
+      <cite>Ovid, <em>Fasti</em> VI, on Cardea, Roman goddess of hinges and thresholds</cite>
+    </blockquote>
+
+    <section>
+      <h2>What it is</h2>
+      <p>Cardea Key is an open-source hardware security key that brings together, in a single device,
+        what today usually needs several:</p>
+      <ul>
+        <li><strong>FIDO2 / WebAuthn passkeys</strong> and U2F, for phishing-resistant sign-in;</li>
+        <li><strong>OpenPGP</strong>, for signing, encryption and SSH;</li>
+        <li><strong>PIV</strong> smart-card certificates, for VPNs, TLS client auth and code signing;</li>
+        <li><strong>OATH</strong> one-time codes (TOTP/HOTP).</li>
+      </ul>
+      <p>The goal is a key whose secrets live in a dedicated <strong>secure element</strong> rather than
+        in the microcontroller's flash, with a PIN counted by that chip and a
+        <strong>fingerprint</strong> unlock bounded in time.</p>
+    </section>
+
+    <section>
+      <h2>Status</h2>
+      <p>Early development. A unified firmware prototype runs on a Raspberry Pi Pico&nbsp;2 (RP2350)
+        and passes our first FIDO2, OpenPGP, PIV and OATH tests. The secure element and the fingerprint
+        sensor come next; custom hardware comes last.</p>
+      <p>There are no releases yet, and the prototype is <strong>not</strong> meant to hold real
+        credentials. The source code will be published under the AGPL-3.0 once it is ready.</p>
+    </section>
+
+    <section>
+      <h2>Built on</h2>
+      <p>The firmware builds on <a href="https://github.com/polhenarejos/pico-fido">pico-fido</a>,
+        <a href="https://github.com/polhenarejos/pico-openpgp">pico-openpgp</a> and
+        <a href="https://github.com/polhenarejos/pico-keys-sdk">pico-keys-sdk</a> by Pol Henarejos
+        (AGPL-3.0). Cardea Key is an independent project, not affiliated with PicoKeys, Yubico or
+        Raspberry Pi Ltd.</p>
+    </section>
+
+    <footer>
+      <p>A project of <a href="https://github.com/shosoin">Shōsōin</a>, a storehouse of small open projects.</p>
+    </footer>
+  </main>
+</body>
+</html>
