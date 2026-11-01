@@ -40,13 +40,16 @@
       <h2>Status</h2>
       <p>Early development. <strong>Phase 0 is complete</strong>: one unified firmware runs on a
         Raspberry Pi Pico&nbsp;2 (RP2350) with FIDO2 passkeys, OpenPGP, PIV, OATH, OTP slots and
-        encrypted passkey backups, and never writes the chip's one-time-programmable memory. The secure
-        element and the fingerprint sensor come next; custom hardware comes last.</p>
+        encrypted passkey backups, and never writes the chip's one-time-programmable memory.
+        <strong>Phase 1</strong> adds an NXP SE051 secure element that holds the PINs, their retry
+        counters and the root key, behind an encrypted link; so far it has been validated against a
+        simulated chip, and tests on the real chip come next. Then the fingerprint sensor; custom
+        hardware comes last.</p>
       <p>The source code is available under the AGPL-3.0 at
         <a href="https://github.com/shosoin/cardea-key">github.com/shosoin/cardea-key</a>. The latest
-        <a href="https://github.com/shosoin/cardea-key/releases/latest">release</a> is the
-        phase&nbsp;0 firmware, ready to flash. It is a prototype and <strong>not</strong> meant to hold real
-        credentials.</p>
+        <a href="https://github.com/shosoin/cardea-key/releases/latest">release</a> comes in two
+        experimental builds, ready to flash: one for a bare Pico&nbsp;2 and one for a Pico&nbsp;2 with the
+        SE051. It is a prototype and <strong>not</strong> meant to hold real credentials.</p>
     </section>
 
     <section>
